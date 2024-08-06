@@ -1,0 +1,125 @@
+---
+layout: default
+---
+
+{%- capture theme_style -%}--theme-bg-color:{%- if page.color.bg
+-%}{{page.color.bg}}{%- else -%}var(--black){%- endif -%};--theme-color:{%- if
+page.color.text -%}{{page.color.text}}{%- else -%}var(--white){%- endif -%};{%-
+endcapture -%}
+
+<article class="page-content landing-page" style="{{ theme_style }}">
+  {% if page.banner.url %}
+  <div class="landing-page__banner">
+    <img src="{{ page.banner.url }}" width="100%" alt="{{ page.banner.alt }}" />
+  </div>
+  {% endif %}
+
+  <header class="wrapper horizontal wrap gap-3 align-center my-1 lh-1">
+    <div class="landing-page__logo">
+      <img src="{{ page.logo }}" width="160" alt="Logo: {{ page.title }}" />
+    </div>
+    <div class="flex">
+      <p class="landing-page__categories m-0 horizontal start wrap gap-1">
+        {% for category in page.categories %}
+        <small
+          class="badge"
+          style="
+            color: var(--theme-color);
+            background-color: var(--theme-bg-color);
+          "
+        >
+          {{ category }}
+        </small>
+        {% endfor %}
+      </p>
+      <h1 class="landing-page__title my-1">{{ page.title }}</h1>
+      <p class="landing-page__description m-0">{{ page.description }}</p>
+    </div>
+  </header>
+
+  <div class="wrapper">{{ content }}</div>
+
+  {%- if page.cta.url -%} {%- capture cta_background -%}{%- if
+  page.cta.background -%}background-image: url('{{ page.cta.background }}');
+  background-size: cover; background-position: center;{%- endif -%}{%-
+  endcapture -%}
+  <div class="landing-page__cta wrapper my-3">
+    <div
+      class="horizontal align-center gap-3 wrap p-5"
+      style="background-color: var(--theme-bg-color); text-wrap: balance; {{ cta_background }}"
+    >
+      <div class="flex">
+        {%- if page.cta.description -%}
+        <p
+          class="h2 inline-highlight"
+          style="
+            background-color: var(--theme-bg-color);
+            color: var(--theme-color);
+          "
+        >
+          {{ page.cta.description }}
+        </p>
+        {%- endif -%}
+      </div>
+      <div class="p-1">
+        <a href="{{ page.cta.url }}" class="btn btn-lg" target="_blank"
+          >{%- if page.cta.label -%}{{ page.cta.label }}{%- else -%}Acesse{%-
+          endif -%}</a
+        >
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+  <footer class="landing-page__footer">
+    <div class="wrapper">
+      <div class="landing-page__footer-content">
+        <p>
+          {%- if page.address -%}
+          <strong> {{ page.title }} </strong>
+          <br />
+          {{ page.address }}
+          <br />
+          {%- endif -%} {%- if page.email -%}
+          <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+          <br />
+          {%- endif -%} {%- if page.phone.number -%}
+          <a href="tel:{{ page.phone.number }}">{{ page.phone.label }}</a>
+          <br />
+          {%- endif -%}
+        </p>
+
+        <div class="horizontal center gap-3">
+          {%- if page.whatsapp.number -%} {%- capture wa_link
+          -%}https://wa.me/{{ page.whatsapp.number }}{%- if page.whatsapp.text
+          -%}?text={{page.whatsapp.text | uri_escape}}{%- endif -%}{%-
+          endcapture -%}
+          <p>
+            <a href="{{wa_link}}" target="_blank">
+              {%- include svg/whatsapp.svg -%}
+            </a>
+          </p>
+          {%- endif -%} {%- if page.facebook -%}
+          <p>
+            <a href="{{ page.facebook }}" target="_blank">
+              {%- include svg/facebook.svg -%}
+            </a>
+          </p>
+          {%- endif -%} {%- if page.instagram -%}
+          <p>
+            <a href="{{ page.instagram }}" target="_blank">
+              {%- include svg/instagram.svg -%}
+            </a>
+          </p>
+          {%- endif -%} {%- if page.youtube -%}
+          <p>
+            <a href="{{ page.youtube }}" target="_blank">
+              {%- include svg/youtube.svg -%}
+            </a>
+          </p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </footer>
+</article>

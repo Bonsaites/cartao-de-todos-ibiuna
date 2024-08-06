@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.site-header {
+  position: relative;
+}
+
+.site-title {
+  padding: var(--spacing-xs) 0;
+}

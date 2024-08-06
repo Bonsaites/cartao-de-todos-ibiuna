@@ -1,0 +1,98 @@
+---
+layout: templates/default-template
+title: 'Cartão de Todos Ibiúna'
+address:
+description:
+categories:
+  - consultas
+  - exames
+  - descontos
+  - cashback
+facebook:
+instagram:
+email:
+phone:
+  number:
+  label:
+whatsapp:
+  number:
+  text: Olá! Visitei sua página e quero saber mais sobre a Promoção de Inverno.
+  label: +55 15 99159-0102
+logo: assets/img/logo-cartao-de-todos.png
+banner:
+  url:
+  alt:
+color:
+  bg: var(--green-3)
+  text: var(--black)
+cta:
+  url: https://wa.me/5535991167356?text=Ol%C3%A1!%20Visitei%20sua%20p%C3%A1gina%20e%20quero%20saber%20mais%20sobre%20a%20Promo%C3%A7%C3%A3o%20de%20Inverno.
+  label: Abrir o WhatsApp
+  description: 'Ou chame no WhatsApp:'
+  background:
+---
+
+<img
+  src="assets/img/cartao-de-todos-ibiuna-promocao-de-inverno.jpg"
+  alt="Promoção de Inverno. Superdescontos para aquecer seu inverno."
+/>
+
+<h2>Peça já seu cartão e garanta muitos benefícios</h2>
+
+<p>
+  Aproveite até 75% de desconto em saúde, educação, lazer e muito mais. Não
+  perca essa chance!
+</p>
+
+<div
+  class="gap-3 py-3"
+  style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  "
+>
+  <div>
+    <img
+      src="assets/img/cartao-de-todos-ibiuna-tabela-de-precos.jpg"
+      alt="Tabela de valores"
+    />
+  </div>
+
+  <div>
+    <form
+      action="//server.bonsaites.com.br/contato_cartao_de_todos_ibiuna.php"
+      method="post"
+      class="vertical gap-2"
+    >
+      <p>
+        <strong>Preencha seus dados e peça seu cartão agora!</strong>
+      </p>
+
+      <div>
+        <label for="name" class="required">Nome completo</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label for="email" class="required">E-mail</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="phone" class="required">Telefone</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+      <div>
+        <label for="phone" class="required">WhatsApp</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+      <label hidden>
+        <small>
+          Seres humanos não deveriam ver isso. Deixe este campo em branco.
+        </small>
+        <input type="text" name="honeypot" />
+      </label>
+      <div class="horizontal end">
+        <button>Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>

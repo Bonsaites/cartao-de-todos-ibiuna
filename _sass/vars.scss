@@ -1,0 +1,47 @@
+html {
+  --black: #000;
+  --white: #fff;
+
+  --grey-100: #f2f2f2;
+  --grey-200: #e6e6e6;
+  --grey-300: #cccccc;
+  --grey-400: #b3b3b3;
+  --grey-500: #999999;
+  --grey-600: #808080;
+  --grey-700: #666666;
+  --grey-800: #4d4d4d;
+  --grey-900: #333333;
+  --grey-1000: #1a1a1a;
+
+  --red-1: #c80000;
+  --red-2: #e60000;
+  --red-3: #ff0505;
+
+  --orange-1: #fa5800;
+  --orange-2: #ff7905;
+  --orange-3: #ff902d;
+
+  --yellow-1: #ffc12d;
+  --yellow-2: #ffefa5;
+  --yellow-3: #fffbb9;
+
+  --blue-1: #007ed8;
+  --blue-2: #0099ff;
+  --blue-3: #3fc6ff;
+
+  --green-1: #01a988;
+  --green-2: #00c9a7;
+  --green-3: #a6ff00;
+
+  --text-color: var(--grey-700);
+  --background-color: var(--white);
+  --brand-color: var(--green-2);
+
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+
+  --content-width: 1024px;
+}

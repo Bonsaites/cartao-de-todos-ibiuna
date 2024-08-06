@@ -1,0 +1,58 @@
+---
+layout: default
+lang: pt_BR
+---
+
+<article
+  class="page-content post"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header wrapper">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">{{ content }}</div>
+
+  <div class="post-navigation hero light">
+    <nav class="wrapper large horizontal center">
+      <div class="flex prev">
+        {% if page.previous.url %}
+        <small>Post Anterior</small>
+        <br />
+        <a href="{{site.baseurl}}{{page.previous.url}}">
+          {% if page.previous.titulo %}{{ page.previous.titulo }} {% else
+          %}{{page.previous.title}}{% endif %}
+        </a>
+        {% endif %}
+      </div>
+      <div class="flex next">
+        {% if page.next.url %}
+        <small>Próximo Post</small>
+        <br />
+        <a href="{{ page.next.url | prepend: site.baseurl }}">
+          {% if page.next.titulo %}{{ page.next.titulo }}{% else
+          %}{{page.next.title}}{% endif %}
+        </a>
+        {% endif %}
+      </div>
+    </nav>
+  </div>
+
+  <footer class="post-content">
+    <p class="wrapper">
+      Compartilhe suas experiências e descobertas comigo nas minhas redes
+      sociais! Seu feedback é fundamental para continuarmos aprimorando nossas
+      técnicas e compartilhando conhecimento.
+    </p>
+
+    <nav class="site-nav horizontal center">
+      {% assign card = site.data.vcard %}{% for link in card.social %}
+      <a href="{{ link.url }}" target="_blank" class="{{ link.icon }}">
+        <span class="icon"> {% include svg/{{ link.icon }}.svg %} </span>
+        {{ link.title }}
+      </a>
+      {% endfor %}
+    </nav>
+  </footer>
+</article>
