@@ -42,7 +42,8 @@ endcapture -%}
   {%- if page.cta.url -%} {%- capture cta_background -%}{%- if
   page.cta.background -%}background-image: url('{{ page.cta.background }}');
   background-size: cover; background-position: center;{%- endif -%}{%-
-  endcapture -%}
+  endcapture -%} {% capture cta_url %}{{ page.cta.url }}{% if page.cta.text
+  %}?text={{page.cta.text | uri_escape}}{% endif %}{% endcapture %}
   <div class="landing-page__cta wrapper my-3">
     <div
       class="horizontal align-center gap-3 wrap p-5"
@@ -62,7 +63,7 @@ endcapture -%}
         {%- endif -%}
       </div>
       <div class="p-1">
-        <a href="{{ page.cta.url }}" class="btn btn-lg" target="_blank"
+        <a href="{{ cta_url }}" class="btn btn-lg" target="_blank"
           >{%- if page.cta.label -%}{{ page.cta.label }}{%- else -%}Acesse{%-
           endif -%}</a
         >
