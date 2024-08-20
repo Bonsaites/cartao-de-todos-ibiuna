@@ -27,31 +27,40 @@ color:
   text: var(--black)
 cta:
   url: https://wa.me/5515991590102
-  text: "Olá. Visitei sua página e quero saber mais sobre a Promoção de Inverno."
+  text: 'Olá. Visitei sua página e quero saber mais sobre a Promoção de Inverno.'
   label: Abrir o WhatsApp
   description: 'Entre em contato pelo WhatsApp:'
   background:
 ---
 
-<video src="assets/video/depoimento.mp4" muted loop autoplay onclick="this.muted = !this.muted"></video>
+<video
+  src="assets/video/depoimento.mp4"
+  muted
+  loop
+  autoplay
+  onclick="this.muted = !this.muted"
+></video>
 
 {%- comment -%} cartaodetodosibiuna@gmail.com {%- endcomment -%}
 
 <div class="horizontal sm-vertical gap-3 py-3">
   <div class="flex">
-    <img src="assets/img/2024-08/adesao-gratis-tabela.jpg" alt="">
+    <img
+      src="assets/img/2024-08/adesao-gratis-tabela.jpg"
+      alt="Adesão Grátis e tabela de preços"
+    />
   </div>
 
   <div class="flex">
     <form
-      action="//server.bonsaites.com.br/contato_cartao_de_todos_ibiuna.php"
+      action="//server.cartaodetodosibiuna.com.br/enviar_email.php"
       method="post"
       class="vertical gap-2"
     >
       <p class="fsz-5 m-0 lh-1 txt-blue-1">
         <strong>Preencha seus dados e peça seu cartão agora!</strong>
       </p>
-    
+
       <div>
         <label for="name" class="required">Nome completo</label>
         <input type="text" id="name" name="name" required />
@@ -82,6 +91,16 @@ cta:
 </div>
 
 <div class="horizontal sm-vertical gap-3">
-  <div class="flex"><img src="assets/img/2024-08/beneficios-app-descontos.jpg" alt="Todos os benefícios"></div>
-  <div class="flex"><img src="assets/img/2024-08/maior-cartao-de-beneficios.jpg" alt="Dinheiro parado no app"></div>
+  <div class="flex">
+    <img
+      src="assets/img/2024-08/beneficios-app-descontos.jpg"
+      alt="Todos os benefícios"
+    />
+  </div>
+  <div class="flex">
+    <img
+      src="assets/img/2024-08/maior-cartao-de-beneficios.jpg"
+      alt="Dinheiro parado no app"
+    />
+  </div>
 </div>
